@@ -9,7 +9,7 @@
   });
   
   var data = [];
-  var port = chrome.extension.connect({name: 'devtools'});
+  var port = chrome.runtime.connect({name: 'devtools'});
   port.onMessage.addListener(function(msg) {
     // Take action on received messages,
     if(msg.callback == 'tab') inspectedTabDefer.resolve(msg.tab);
@@ -58,7 +58,7 @@
       
       //Get the current tab,
       var tabID = chrome.devtools.inspectedWindow.tabId;
-      chrome.extension.sendRequest({action: "tabs.get", id: tabID}, function(r) {
+      chrome.runtime.sendRequest({action: "tabs.get", id: tabID}, function(r) {
         newResource = resource;
         currentTab = r.tab;
       });

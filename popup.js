@@ -13,7 +13,7 @@
   };
   
   
-  var port = chrome.extension.connect({name:"popup"});
+  var port = chrome.runtime.connect({name:"popup"});
   port.onMessage.addListener(function(msg) {
     if(msg.action == 'updateHTML' && typeof updateHTML == 'function' && currentTabId == msg.tabId) {
       updateHTML(msg.html);

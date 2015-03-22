@@ -4,7 +4,7 @@
   /*
     Extension Communication,
   */
-  var port = chrome.extension.connect({name:"panel"});
+  var port = chrome.runtime.connect({name:"panel"});
   port.onMessage.addListener(function(msg) {
     switch(msg.action) {
       case 'validatedUrl':
