@@ -63,7 +63,7 @@
   var ports = {};
   chrome.extension.onConnect.addListener(function(port) {
       if(port.name != 'devtools' && port.name != 'popup' && port.name != 'panel') return;
-      var tabId = port.sender && port.sender.tab.id ? port.sender.tab.id : null;
+      var tabId = port.sender && port.sender.tab && port.sender.tab.id ? port.sender.tab.id : null;
       ports[port.portId_] = {port: port, portId: port.portId_, tabId: tabId, name: port.name};
       
       // Remove port when destroyed (eg when devtools instance is closed)
