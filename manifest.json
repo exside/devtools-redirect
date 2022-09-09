@@ -1,7 +1,7 @@
 {
-    "name": "Devtools redirect",
-    "version": "0.0.2.2",
-    "manifest_version": 2,
+    "name": "Devtools Redirect",
+    "version": "0.0.2.3",
+    "manifest_version": 3,
     "description": "Catch and redirect resources loaded from a specific domain to any file hosted on a local or remote server.",
     "icons": {
       "32": "icon_32.png",
